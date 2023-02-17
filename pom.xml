@@ -22,7 +22,9 @@
 		<module>tiergesund-visits-service</module>
 	    <module>tiergesund-config-server</module>
         <module>tiergesund-discovery-server</module>
+<!--
         <module>tiergesund-api-gateway</module>
+-->
     </modules>
 
     <properties>
