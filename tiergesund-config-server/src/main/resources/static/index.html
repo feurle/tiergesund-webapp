@@ -1,31 +1,40 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <body>
-    <h1>Spring Cloud Config Server</h1>
-    <p> The Spring Cloud Config Server provides an HTTP resource-based API for external yaml configuration for all the Tiergesund Webapp</p>
-    <ul>
-        <li>See the <a href="https://cloud.spring.io/spring-cloud-config/">Spring Cloud Config Server reference manual</a> for the REST API</li>
-        <li><a href="https://github.com/feurle/tiergesund-webapp-config">All Tiergesund configuration files in GitHub</a></li>
-        <li><a href="/application-default.yml">Common microservices configuration</a></li>
-        <li><a href="/discovery-server.yml">Discovery server configuration</a></li>
-    </ul>
-    <ul>
-        <li><a href="/vets-service-default.yml">Configuration of the vets service deployed native on host</a></li>
-        <li><a href="http://localhost:8888/vets-service-docker.yml">Configuration of the vets service deployed on a Docker container</a></li>
-    </ul>
-    <ul>
-        <li><a href="/visits-service-default.yml">Configuration of the visits service deployed native on host</a></li>
-        <li><a href="http://localhost:8888/visits-service-docker.yml">Configuration of the visits service deployed on a Docker container</a></li>
-    </ul>
-    <ul>
-        <li><a href="/customers-service-default.yml">Configuration of the customers service deployed native on host</a></li>
-        <li><a href="http://localhost:8888/customers-service-docker.yml">Configuration of the customers service deployed on a Docker container</a></li>
-    </ul>
+<h1>Spring Cloud Config Server</h1>
+<p> The Spring Cloud Config Server provides an HTTP resource-based API for external yaml configuration for all the
+    Tiergesund Webapp</p>
+<ul>
+    <li>See the <a href="https://cloud.spring.io/spring-cloud-config/">Spring Cloud Config Server reference manual</a>
+        for the REST API
+    </li>
+    <li><a href="https://github.com/feurle/tiergesund-webapp-config">All Tiergesund configuration files in GitHub</a>
+    </li>
+</ul>
 
-    <ul>
-        <li><a href="/api-gateway-default.yml">Configuration of the API gateway deployed native on host</a></li>
-        <li><a href="http://localhost:8888/api-gateway-docker.yml">Configuration of the API gateway deployed on a Docker container</a></li>
-    </ul>
+<h2>Microservices Configurations</h2>
+<p>All configuration yml files for the microservices are served within the Spring Cloud Config Server.
+    Based on the deployments, two types of configurations are available:
+    default (native on host) and docker.</p>
+<ul>
+    <li><a href="/application-default.yml">application-default.yml</a> - common configuration for all microservices</li>
+    <li><a href="/discovery-server.yml">discovery-server.yml</a> - discovery server</li>
+</ul>
+<h3>Configuration of the services deployed native on host</h3>
+<ul>
+    <li><a href="/vets-service-default.yml">vets-service-default.yml</a></li>
+    <li><a href="/visits-service-default.yml">visits-service-default.yml</a></li>
+    <li><a href="/customers-service-default.yml">customers-service-default.yml</a></li>
+    <li><a href="/api-gateway-default.yml">api-gateway-default.yml</a></li>
+</ul>
+<h3>Configuration of the services deployed on a Docker container</h3>
+<ul>
+    <li><a href="/vets-service-docker.yml">vets-service-docker.yml</a></li>
+    <li><a href="/visits-service-docker.yml">visits-service-docker.yml</a></li>
+    <li><a href="/customers-service-docker.yml">customers-service-docker.yml</a></li>
+    <li><a href="/api-gateway-docker.yml">api-gateway-docker.yml</a></li>
+</ul>
+
 
 </body>
 </html>
