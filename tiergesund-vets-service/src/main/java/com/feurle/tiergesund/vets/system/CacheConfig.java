@@ -5,7 +5,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 
 /**
- * Cache could be disable in unit test.
+ * Cache could be disabled in unit test.
  */
 @Configuration
 @EnableCaching

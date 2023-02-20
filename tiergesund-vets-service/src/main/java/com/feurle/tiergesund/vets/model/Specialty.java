@@ -1,14 +1,9 @@
 package com.feurle.tiergesund.vets.model;
 
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
-
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import lombok.ToString;
 
 /**
  * Models a {@link Vet Vet's} specialty (for example, dentistry).
@@ -16,6 +11,7 @@ import jakarta.persistence.Table;
  */
 @Entity
 @Table(name = "specialties")
+@ToString
 public class Specialty {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
