@@ -30,3 +30,8 @@ scrape_configs:
     metrics_path: /actuator/prometheus
     static_configs:
       - targets: [ 'vets-service:8083' ]
+
+  - job_name: blog-service
+    metrics_path: /actuator/prometheus
+    static_configs:
+      - targets: [ 'blog-service:8089' ]
