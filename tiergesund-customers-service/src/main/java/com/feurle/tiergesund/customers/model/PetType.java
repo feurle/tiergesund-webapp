@@ -15,21 +15,17 @@
  */
 package com.feurle.tiergesund.customers.model;
 
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
-
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import lombok.ToString;
 
 /**
  * Can be Cat, Dog, Hamster...
  */
 @Entity
 @Table(name = "types")
+@ToString
 public class PetType {
 
     @Id

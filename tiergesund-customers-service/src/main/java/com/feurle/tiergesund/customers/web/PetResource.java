@@ -23,7 +23,9 @@ class PetResource {
 
     @GetMapping("/petTypes")
     public List<PetType> getPetTypes() {
-        return petRepository.findPetTypes();
+        List<PetType> petTypes = petRepository.findPetTypes();
+        log.info("Get all petTypes {}", petTypes);
+        return petTypes;
     }
 
     @PostMapping("/owners/{ownerId}/pets")

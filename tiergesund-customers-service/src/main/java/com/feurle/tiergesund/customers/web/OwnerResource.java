@@ -1,15 +1,15 @@
 package com.feurle.tiergesund.customers.web;
 
+import com.feurle.tiergesund.customers.model.Owner;
 import com.feurle.tiergesund.customers.model.OwnerRepository;
 import io.micrometer.core.annotation.Timed;
+import jakarta.validation.Valid;
+import jakarta.validation.constraints.Min;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
-import com.feurle.tiergesund.customers.model.Owner;
 import org.springframework.web.bind.annotation.*;
 
-import jakarta.validation.Valid;
-import jakarta.validation.constraints.Min;
 import java.util.List;
 import java.util.Optional;
 
@@ -28,6 +28,7 @@ class OwnerResource {
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public Owner createOwner(@Valid @RequestBody Owner owner) {
+        log.info("Saving owner {}", owner);
         return ownerRepository.save(owner);
     }
 
@@ -36,7 +37,9 @@ class OwnerResource {
      */
     @GetMapping(value = "/{ownerId}")
     public Optional<Owner> findOwner(@PathVariable("ownerId") @Min(1) int ownerId) {
-        return ownerRepository.findById(ownerId);
+        final Optional<Owner> owner = ownerRepository.findById(ownerId);
+        log.info("Find owner {}", owner);
+        return owner;
     }
 
     /**
@@ -44,7 +47,9 @@ class OwnerResource {
      */
     @GetMapping
     public List<Owner> findAll() {
-        return ownerRepository.findAll();
+        List<Owner> owners = ownerRepository.findAll();
+        log.info("Getting owners {}", owners);
+        return owners;
     }
 
     /**
