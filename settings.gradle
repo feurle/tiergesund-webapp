@@ -1,0 +1,5 @@
+rootProject.name = 'tiergesund-webapp'
+
+include 'tiergesund-config-server'
+include 'tiergesund-discovery-server'
+include 'tiergesund-vets-service'
