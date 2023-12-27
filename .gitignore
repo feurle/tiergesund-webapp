@@ -1,6 +1,9 @@
-# Maven
-target/
-!.mvn/wrapper/maven-wrapper.jar
+HELP.md
+.gradle
+build/
+!gradle/wrapper/gradle-wrapper.jar
+!**/src/main/**/build/
+!**/src/test/**/build/
 
 # Jenv
 .java-version
@@ -10,9 +13,14 @@ target/
 .classpath
 .project
 
-# IntelliJ IDEA
+### IntelliJ IDEA ###
 .idea
+*.iws
 *.iml
+*.ipr
+out/
+!**/src/main/**/out/
+!**/src/test/**/out/
 
 # Visual Studio Code
 .factorypath
