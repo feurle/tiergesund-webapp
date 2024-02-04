@@ -1,0 +1,10 @@
+plugins {
+    id 'tiergesund.java'
+    id 'tiergesund.spring-deps'
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter'
+    annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
+
+}

@@ -1,81 +1,24 @@
-buildscript {
-    repositories {
-        mavenLocal()
-        mavenCentral()
-    }
-    dependencies {
-        classpath "org.openapitools:openapi-generator-gradle-plugin:6.6.0"
-    }
-}
-
 plugins {
-	id 'java'
-	id 'org.springframework.boot' version '3.1.7'
-	id 'io.spring.dependency-management' version '1.1.4'
-   // id 'org.graalvm.buildtools.native' version '0.9.27'
-}
-
-apply plugin: 'org.openapi.generator'
-
-group = 'com.feurle.tiergesund.vets'
-version = '0.1'
-sourceCompatibility = '17'
-
-configurations {
-	compileOnly {
-		extendsFrom annotationProcessor
-	}
-}
-
-repositories {
-	mavenCentral()
-	maven { url 'https://artifactory-oss.prod.netflix.net/artifactory/maven-oss-candidates' }
-}
-
-ext {
-	set('springCloudVersion', "2022.0.4")
+    id 'tiergesund.spring-boot'
 }
 
 dependencies {
-	implementation 'org.springframework.boot:spring-boot-starter-actuator'
 	implementation 'org.springframework.boot:spring-boot-starter-cache'
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     implementation 'org.springframework.boot:spring-boot-starter-validation'
 
-    implementation 'jakarta.xml.bind:jakarta.xml.bind-api'
-    implementation 'org.springframework.boot:spring-boot-starter-web'
-	implementation 'org.springframework.cloud:spring-cloud-starter-config'
     implementation 'org.springframework.cloud:spring-cloud-starter-bootstrap'
-	implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
-    developmentOnly 'org.springframework.boot:spring-boot-devtools'
+    implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
+
+    implementation 'jakarta.xml.bind:jakarta.xml.bind-api'
+
     compileOnly 'org.projectlombok:lombok'
-	runtimeOnly 'com.mysql:mysql-connector-j'
+
+    runtimeOnly 'org.postgresql:postgresql'
 	runtimeOnly 'io.micrometer:micrometer-registry-prometheus'
 	runtimeOnly 'org.hsqldb:hsqldb'
+
 	annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
     annotationProcessor 'org.projectlombok:lombok'
-	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-}
 
-dependencyManagement {
-	imports {
-		mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
-	}
-}
-
-openApiGenerate {
-    generatorName.set("spring")
-}
-
-tasks.named('bootBuildImage') {
-    builder = 'paketobuildpacks/builder-jammy-base:latest'
-}
-
-
-tasks.named('test') {
-	useJUnitPlatform()
-}
-
-springBoot {
-    buildInfo()
 }

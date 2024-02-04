@@ -1,45 +1,7 @@
 plugins {
-	id 'java'
-	id 'org.springframework.boot' version '3.1.7'
-	id 'io.spring.dependency-management' version '1.1.4'
-    //id 'org.graalvm.buildtools.native' version '0.9.27'
-}
-
-
-group = 'com.feurle.tiergesund.config'
-version = '0.0.1'
-sourceCompatibility = '17'
-
-repositories {
-	mavenCentral()
-}
-
-ext {
-	set('springCloudVersion', "2022.0.4")
+    id 'tiergesund.spring-boot'
 }
 
 dependencies {
 	implementation 'org.springframework.cloud:spring-cloud-config-server'
-    implementation 'org.springframework.boot:spring-boot-starter-actuator'
-    developmentOnly 'org.springframework.boot:spring-boot-devtools'
-	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-}
-
-dependencyManagement {
-	imports {
-		mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
-	}
-}
-
-tasks.named('bootBuildImage') {
-    builder = 'paketobuildpacks/builder-jammy-base:latest'
-}
-
-
-tasks.named('test') {
-	useJUnitPlatform()
-}
-
-springBoot {
-    buildInfo()
 }

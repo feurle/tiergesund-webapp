@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE suppressions PUBLIC
+    "-//Checkstyle//DTD SuppressionFilter Configuration 1.2//EN"
+    "https://checkstyle.org/dtds/suppressions_1_2.dtd">
+
+<suppressions>
+    <suppress files="\*build\*\*\.\*" checks="[a-zA-Z0-9]*"/>
+    <suppress checks="LineLength" files=".*Test\.java"/>
+    <suppress checks="MethodName" files=".*Test\.java"/>
+    <suppress checks="MethodName" files=".*Provider\.java"/>
+    <suppress checks="ConstantName" files=".*Provider\.java"/>
+</suppressions>
